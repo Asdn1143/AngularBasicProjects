@@ -1,0 +1,37 @@
+
+.scoreboard{
+  width:fit-content;
+  height: 130px;
+  margin:50px auto;
+  display: grid;
+
+  grid-template: 100px 100px/200px 200px;
+
+  &> *{
+    text-align: center;
+    font-size: 5rem;
+  }
+}
+
+html{
+  height: 100px !important;
+}
+
+
+
+main {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-gap: 0px;
+  width: fit-content;
+  height:fit-content;
+  margin: 0 auto;
+
+
+}
+
+
+app-square {
+  border: 1px gray solid;
+  height: 200px;
+}

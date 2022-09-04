@@ -1,0 +1,25 @@
+<!-- <mat-icon  aria-label="restart icon" fontIcon="arrow"></mat-icon>
+<h1>Current Player: {{ player }} </h1>
+
+<button mat-button  (click)="newGame()">Start new Game</button>
+
+
+<h2 *ngIf="winner">
+    Player {{ winner }} won the game!
+</h2> -->
+
+<div class="scoreboard">
+  <div>X</div>
+  <div>O</div>
+  <div>{{xScore}}</div>
+  <div>{{oScore}}</div>
+</div>
+
+<main>
+    <app-square
+        *ngFor="let val of squares; let i = index"
+        [value]="val"
+        (click)="makeMove(i)">
+
+    </app-square>
+</main>
