@@ -1,0 +1,56 @@
+<h1 mat-dialog-title>New Product</h1>
+<div mat-dialog-content>
+  <!-- form part -->
+ <form [formGroup]="productForm">
+  <!-- Name -->
+  <mat-form-field id="Name" appearance="outline">
+    <mat-label>Product name</mat-label>
+    <input formControlName="name" matInput placeholder="something">
+  </mat-form-field>
+  <!-- Catergory -->
+  <mat-form-field id="Category" appearance="outline">
+    <mat-label>Product category</mat-label>
+    <mat-select formControlName="category" placeholder="Category">
+      <mat-option value="1">1</mat-option>
+      <mat-option value="2">2</mat-option>
+      <mat-option value="3">3</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <!-- Date -->
+  <mat-form-field id="Date" appearance="outline">
+    <mat-label>Date</mat-label>
+    <input formControlName="date" matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <!-- State -->
+  <label id="radio-group-label">State</label>
+  <mat-radio-group formControlName="state"
+  id="State"
+  aria-labelledby="radio-group-label"
+  class="radio-group">
+    <mat-radio-button class="radio-button" *ngFor="let fresh of freshnessList" [value]="fresh">
+    {{fresh}}
+   </mat-radio-button>
+  </mat-radio-group>
+  <!-- Price -->
+  <mat-form-field id="Price" appearance="outline">
+    <mat-label>Price ($)</mat-label>
+    <input formControlName="price" matInput type="number"  placeholder="something">
+  </mat-form-field>
+  <!-- Comment -->
+  <mat-form-field id="Comment" appearance="outline">
+    <mat-label>Comment</mat-label>
+    <textarea formControlName="comment" matInput></textarea>
+  </mat-form-field>
+ </form>
+
+
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button style="margin: 0 auto 0 0" mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button mat-raised-button color="primary" mat-dialog-save (click)="addProduct()">Save</button>
+
+</div>
+

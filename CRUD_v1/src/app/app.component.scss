@@ -1,9 +1,35 @@
 mat-toolbar{
+
+
  mat-icon{
-  margin-right: 10px;
+  margin: 10px;
  }
 }
 
-.example-spacer{
+button {
+  margin: 10px;
+}
+
+.example-spacer  {
   flex: 1 1 auto;
+}
+
+/* Structure */
+.container{
+  width: 90%;
+  height: 80%;
+  margin: auto;
+  padding-top: 5%;
+}
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
 }
